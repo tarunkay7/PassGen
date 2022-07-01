@@ -1,0 +1,76 @@
+#:kivy 1.9.0
+#:import Factory kivy.factory.Factory
+
+<mypopup@Popup>:
+    auto_dismiss:True
+    size_hint: 0.5,0.3
+    pos_hint : {"x":0.2,"top":0.7}
+    title :"Attention"
+    Label:
+        text : "Your password has been copied to clipboard.\nClick anywhere on the screen to close window."
+        font_size : 14
+
+<Myroot>:
+
+
+    BoxLayout:
+        orientation:"vertical"
+        padding:20
+        spacing: 20
+
+
+
+
+
+        Label:
+            text:"PASSGEN"
+            font_size:87
+            font_name:"ubuntubold"
+            color : (182/255, 169/255, 217/255)
+
+        Label:
+            id:pisoot1
+            text:"Your password is"
+            text_size:self.size
+            font_name:"nunito"
+            halign: 'center'
+            valign: 'middle'
+
+        Label:
+            id:pisoot
+            text:""
+            text_size:self.size
+            font_name:"nunito"
+            halign: 'center'
+            valign: 'middle'
+
+        Label:
+            id: random_label
+            text: '-'
+            font_name:"nunito"
+            font_size:32
+            color:(255/255, 226/255, 176/255)
+        TextInput:
+            id: input
+            focus: True
+            input_type:"number"
+            hint_text:'Enter a number between 5 and 25'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.705}
+            size_hint: 0.5, 0.5
+
+        Button:
+            text : "Generate"
+            color:(1,1,1)
+            background_color : (89/255, 75/255, 129/255)
+            font_size: 25
+            bold:True
+            size_hint: 0.75,0.75
+            pos_hint: {'center_x': 0.5, 'center_y': 0.705}
+            on_press:root.generate_number()
+
+
+
+
+
+
+
